@@ -5,9 +5,10 @@ import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.mehmetdulger.travelguideapp.BR
+import com.mehmetdulger.travelguideapp.TravelGuideModel
 import com.mehmetdulger.travelguideapp.databinding.TopDestinationRowBinding
 
-class SearchViewHolder(
+class TopDestinationViewHolder(
     private val travelGuideBinding: ViewDataBinding,
 ) : RecyclerView.ViewHolder(travelGuideBinding.root) {
     fun onBind(

@@ -1,24 +1,24 @@
-package com.mehmetdulger.travelguideapp.ui.search
+package com.mehmetdulger.travelguideapp
 
 
 import com.google.gson.annotations.SerializedName
 
 data class TravelGuideModel(
-        @SerializedName("category")
+    @SerializedName("category")
         val category: String,
-        @SerializedName("city")
+    @SerializedName("city")
         val city: String,
-        @SerializedName("country")
+    @SerializedName("country")
         val country: String,
-        @SerializedName("description")
+    @SerializedName("description")
         val description: String,
-        @SerializedName("id")
+    @SerializedName("id")
         val id: String,
-        @SerializedName("images")
+    @SerializedName("images")
         val images: List<Image>,
-        @SerializedName("isBookmark")
+    @SerializedName("isBookmark")
         val isBookmark: Boolean,
-        @SerializedName("title")
+    @SerializedName("title")
         val title: String
     )
 data class Image(

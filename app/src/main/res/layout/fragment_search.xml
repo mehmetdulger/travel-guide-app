@@ -7,14 +7,16 @@
 
         <variable
             name="travelGuideModel"
-            type="com.mehmetdulger.travelguideapp.ui.search.TravelGuideModel" />
+            type="com.mehmetdulger.travelguideapp.TravelGuideModel" />
 
         <variable
             name="topDestinationAdapter"
             type="com.mehmetdulger.travelguideapp.ui.search.TopDestinationAdapter" />
+
         <variable
-            name=""
-            type="" />
+            name="nearbyAttractionAdapter"
+            type="com.mehmetdulger.travelguideapp.ui.search.NearbyAttractionAdapter" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -89,7 +91,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
 
-            android:adapter="@{adapter}"
+            android:adapter="@{nearbyAttractionAdapter}"
             android:orientation="vertical"
 
             app:layout_constraintEnd_toEndOf="parent"

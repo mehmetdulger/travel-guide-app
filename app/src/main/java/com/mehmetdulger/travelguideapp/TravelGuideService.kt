@@ -1,4 +1,4 @@
-package com.mehmetdulger.travelguideapp.ui.search
+package com.mehmetdulger.travelguideapp
 
 import retrofit2.Call
 import retrofit2.http.GET

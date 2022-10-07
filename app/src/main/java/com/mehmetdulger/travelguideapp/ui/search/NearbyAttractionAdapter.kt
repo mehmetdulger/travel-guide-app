@@ -8,19 +8,19 @@ import androidx.recyclerview.widget.RecyclerView
 import com.mehmetdulger.travelguideapp.R
 import com.mehmetdulger.travelguideapp.TravelGuideModel
 
-class TopDestinationAdapter(
+class NearbyAttractionAdapter(
     private var list: List<TravelGuideModel>,
     private val onItemClickHandler: (travelGuideModel: TravelGuideModel) -> Unit
 ):RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val travelGuideModelBinding = DataBindingUtil.inflate<ViewDataBinding>(
-            LayoutInflater.from(parent.context), R.layout.top_destination_row, parent, false)
-        return TopDestinationViewHolder(travelGuideModelBinding)
+            LayoutInflater.from(parent.context), R.layout.nearby_attractions_row, parent, false)
+        return NearbyAttractionViewHolder(travelGuideModelBinding)
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        (holder as TopDestinationViewHolder).onBind(list.get(position) , onItemClickHandler)
+        (holder as NearbyAttractionViewHolder).onBind(list.get(position) , onItemClickHandler)
 
     }
 

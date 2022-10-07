@@ -4,14 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="travelGuideModel"
-            type="com.mehmetdulger.travelguideapp.ui.search.TravelGuideModel" />
+            type="com.mehmetdulger.travelguideapp.TravelGuideModel" />
 
     </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="358dp"
-        android:layout_height="153dp">
+        android:layout_height="wrap_content"
+        android:paddingTop="12dp">
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/nearbyAttractionsImageView"
@@ -21,34 +24,36 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_launcher_background"
-            app:shapeAppearance="@style/circleImageView" />
+            app:shapeAppearance="@style/circleImageView"
+            app:srcCompat="@drawable/ic_launcher_background" />
 
         <TextView
             android:id="@+id/typeTextView"
+            style="@style/type_text_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
+            android:background="@drawable/type_backround"
             android:hint="TYPE"
             android:paddingHorizontal="6dp"
             android:paddingVertical="2dp"
-            android:background="@drawable/type_backround"
+            android:text="@{travelGuideModel.category}"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            style="@style/type_text_style" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/atractionTextView"
+            style="@style/capital_text_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="46dp"
-            android:text="Attraction"
+            android:text="@{travelGuideModel.title}"
+            android:hint="text"
+            android:textSize="25sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            style="@style/capital_text_style"
-            android:textSize="25sp" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/cityTextName"
@@ -56,8 +61,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:text="City"
+            android:text="@{travelGuideModel.city}"
             android:textSize="18sp"
+            android:hint="text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/atractionTextView" />

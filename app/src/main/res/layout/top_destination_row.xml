@@ -6,7 +6,7 @@
     <data>
         <variable
             name="travelGuideModel"
-            type="com.mehmetdulger.travelguideapp.ui.search.TravelGuideModel" />
+            type="com.mehmetdulger.travelguideapp.TravelGuideModel" />
 
     </data>
 
