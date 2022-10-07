@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.20713429256594723" />
+        <entry key="../../Library/Android/sdk/platforms/android-32/data/res/drawable/ic_lock_idle_alarm.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/bookmark_button_background.xml" value="0.1435" />
+        <entry key="app/src/main/res/drawable/box.xml" value="0.211" />
+        <entry key="app/src/main/res/drawable/circle_background.xml" value="0.2165" />
+        <entry key="app/src/main/res/drawable/deneme.xml" value="0.1635" />
+        <entry key="app/src/main/res/drawable/detail_images_bar_backgraound.xml" value="0.163" />
+        <entry key="app/src/main/res/drawable/ic_bookmark_icon.xml" value="0.1235" />
+        <entry key="app/src/main/res/drawable/ic_cars_icon.xml" value="0.163" />
+        <entry key="app/src/main/res/drawable/ic_home_icon.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/image_radius_crop.xml" value="0.2165" />
+        <entry key="app/src/main/res/drawable/item_background.xml" value="0.2435" />
+        <entry key="app/src/main/res/drawable/item_shape.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/navigation_bottom_bar_backgraund.xml" value="0.2975" />
+        <entry key="app/src/main/res/drawable/navigation_bottom_bar_background.xml" value="0.163" />
+        <entry key="app/src/main/res/drawable/search_bar_backgraund.xml" value="0.2465" />
+        <entry key="app/src/main/res/drawable/top_pick_articles_background.xml" value="0.1235" />
+        <entry key="app/src/main/res/drawable/type_backround.xml" value="0.2165" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.39803916973303693" />
+        <entry key="app/src/main/res/layout/chip_row.xml" value="0.8255396785899105" />
+        <entry key="app/src/main/res/layout/deals_row.xml" value="0.14798206278026907" />
+        <entry key="app/src/main/res/layout/detail_images_row.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/fragment_bookmark.xml" value="0.24273504273504273" />
+        <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_detail.xml" value="0.3093359024798284" />
+        <entry key="app/src/main/res/layout/fragment_guide.xml" value="0.34836835290631674" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.2510548523206751" />
+        <entry key="app/src/main/res/layout/fragment_search.xml" value="0.36842872160553586" />
+        <entry key="app/src/main/res/layout/fragment_serach.xml" value="0.2510548523206751" />
+        <entry key="app/src/main/res/layout/fragment_trip.xml" value="0.2811594202898551" />
+        <entry key="app/src/main/res/layout/fragment_trips.xml" value="0.25427350427350426" />
+        <entry key="app/src/main/res/layout/nearby_attractions_row.xml" value="0.4368229089406975" />
+        <entry key="app/src/main/res/layout/top_destination_row.xml" value="0.3520267663625725" />
+        <entry key="app/src/main/res/layout/top_pick_articles_row.xml" value="0.4394627299602111" />
+        <entry key="app/src/main/res/layout/trip_row.xml" value="0.460400390625" />
+        <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.2510548523206751" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.199" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

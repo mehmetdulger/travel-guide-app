@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.HomeFragment">
+
+    <ImageView
+        android:id="@+id/homePageImageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:elevation="3dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/home_page_image"
+        app:layout_constraintBottom_toTopOf="@+id/dealsTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/destinationTextView"
+        style="@style/text_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="236dp"
+        android:elevation="3dp"
+        android:text="@string/where_s_your_next_destination"
+        android:textSize="32sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/flightsImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/box"
+        android:elevation="3dp"
+        android:padding="16dp"
+        android:clickable="true"
+        android:src="@drawable/ic_flights_icon"
+        app:layout_constraintStart_toStartOf="@+id/homePageImageView"
+        app:layout_constraintTop_toBottomOf="@+id/destinationTextView" />
+
+    <TextView
+        android:id="@+id/flightsTextView"
+        style="@style/text_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:elevation="3dp"
+        android:text="@string/flights"
+        app:layout_constraintEnd_toEndOf="@+id/flightsImageView"
+        app:layout_constraintStart_toStartOf="@+id/flightsImageView"
+        app:layout_constraintTop_toBottomOf="@+id/flightsImageView" />
+
+    <ImageView
+        android:id="@+id/hotelsImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="26dp"
+        android:background="@drawable/box"
+        android:elevation="3dp"
+        android:padding="16dp"
+        android:src="@drawable/ic_hotels_icon"
+        app:layout_constraintStart_toEndOf="@+id/flightsImageView"
+        app:layout_constraintTop_toTopOf="@+id/flightsImageView" />
+
+    <TextView
+        android:id="@+id/hotelsTextView"
+        style="@style/text_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:elevation="3dp"
+        android:text="@string/hotels"
+        app:layout_constraintEnd_toEndOf="@+id/hotelsImageView"
+        app:layout_constraintStart_toStartOf="@+id/hotelsImageView"
+        app:layout_constraintTop_toBottomOf="@+id/hotelsImageView" />
+
+    <ImageView
+        android:id="@+id/carsImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="26dp"
+        android:background="@drawable/box"
+        android:elevation="3dp"
+        android:padding="16dp"
+        android:src="@drawable/ic_cars_icon"
+        app:layout_constraintStart_toEndOf="@+id/hotelsImageView"
+        app:layout_constraintTop_toTopOf="@+id/hotelsImageView" />
+
+    <TextView
+        android:id="@+id/carsTextView"
+        style="@style/text_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:elevation="3dp"
+        android:text="@string/cars"
+        app:layout_constraintEnd_toEndOf="@+id/carsImageView"
+        app:layout_constraintStart_toStartOf="@+id/carsImageView"
+        app:layout_constraintTop_toBottomOf="@+id/carsImageView" />
+
+    <ImageView
+        android:id="@+id/taxiImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="26dp"
+        android:elevation="3dp"
+        android:src="@drawable/ic_taxi_icon"
+        android:background="@drawable/box"
+        android:padding="16dp"
+        app:layout_constraintStart_toEndOf="@+id/carsImageView"
+        app:layout_constraintTop_toTopOf="@+id/carsImageView" />
+
+    <TextView
+        android:id="@+id/taxiTextView"
+        style="@style/text_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:elevation="3dp"
+        android:text="@string/taxi"
+        app:layout_constraintEnd_toEndOf="@+id/taxiImageView"
+        app:layout_constraintStart_toStartOf="@+id/taxiImageView"
+        app:layout_constraintTop_toBottomOf="@+id/taxiImageView" />
+
+    <TextView
+        android:id="@+id/dealsTextView"
+        style="@style/title_text_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/deals"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/homePageImageView" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

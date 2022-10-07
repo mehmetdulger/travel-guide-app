@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="text_style">
+        <item name="android:fontFamily">@font/source_sans_pro</item>
+        <item name="android:textFontWeight">700</item>
+        <item name="android:textColor">#FCFCFD</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="title_text_style">
+        <item name="android:fontFamily">@font/source_sans_pro</item>
+        <item name="android:textFontWeight">600</item>
+        <item name="android:textColor">#181A25</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="capital_text_style">
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/source_sans_pro</item>
+        <item name="android:textFontWeight">700</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">#FCFCFD</item>
+    </style>
+
+    <style name="country_text_style">
+        <item name="android:fontFamily">@font/source_sans_pro</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textFontWeight">400</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">#FCFCFD</item>
+    </style>
+
+    <style name="type_text_style">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">#FCFCFD</item>
+        <item name="android:textColorHint">#FCFCFD</item>
+        <item name="android:fontFamily">@font/source_sans_pro</item>
+        <item name="android:textFontWeight">600</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="tab_text_style">
+        <item name="android:fontFamily">@font/source_sans_pro</item>
+        <item name="android:textFontWeight">700</item>
+        <item name="android:textColor">#C2C5D6</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="trips_row_city_text_style">
+        <item name="android:textSize">25sp</item>
+        <item name="android:fontFamily">@font/source_sans_pro</item>
+        <item name="android:textFontWeight">700</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">#FCFCFD</item>
+    </style>
+
+    <style name="trips_row_date_text_style">
+        <item name="android:fontFamily">@font/source_sans_pro</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textFontWeight">400</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">#FCFCFD</item>
+    </style>
+
+    <style name="fragment_title_text_style">
+        <item name="android:fontFamily">@font/source_sans_pro</item>
+        <item name="android:textFontWeight">700</item>
+        <item name="android:textColor">#292C3D</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+
+    <style name="circleImageView">
+        <item name="cornerSize"> 4%</item>
+    </style>
+
+    <style name="detailRowImageView">
+        <item name="cornerSize"> 12dp</item>
+    </style>
+
+    <style name="bottomCropImageView">
+        <item name="cornerSizeTopLeft">6dp</item>
+        <item name="cornerSizeTopRight">6dp</item>
+    </style>
+
+    <style name="detailImageView">
+        <item name="cornerSizeBottomLeft">32dp</item>
+        <item name="cornerSizeBottomRight">32dp</item>
+
+    </style>
+</resources>

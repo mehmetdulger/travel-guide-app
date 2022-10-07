@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="travelGuideModel"
+            type="com.mehmetdulger.travelguideapp.ui.search.TravelGuideModel" />
+
+        <variable
+            name="topDestinationAdapter"
+            type="com.mehmetdulger.travelguideapp.ui.search.TopDestinationAdapter" />
+        <variable
+            name=""
+            type="" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.search.SearchFragment">
+
+
+        <TextView
+            android:id="@+id/searchTextView"
+            style="@style/fragment_title_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="59dp"
+            android:text="@string/search"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/searchBarEditText"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/search_bar_backgraund"
+            android:drawableEnd="@drawable/ic_red_search_icon"
+            android:hint="@string/where_next"
+            android:padding="10dp"
+            android:textColorHint="#52577A"
+            android:textFontWeight="400"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/searchTextView"
+            app:layout_constraintTop_toBottomOf="@+id/searchTextView" />
+
+        <TextView
+            android:id="@+id/topDestinationTextView"
+            style="@style/title_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/top_destination"
+            app:layout_constraintStart_toStartOf="@+id/searchTextView"
+            app:layout_constraintTop_toBottomOf="@+id/searchBarEditText" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/topDestinationRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="12dp"
+
+            android:adapter="@{topDestinationAdapter}"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/topDestinationTextView" />
+
+        <TextView
+            android:id="@+id/nearbyAttractionsTextView"
+            style="@style/title_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="NEARBY ATTRACTIONS"
+            app:layout_constraintStart_toStartOf="@+id/searchTextView"
+            app:layout_constraintTop_toBottomOf="@+id/topDestinationRecyclerView" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/nearbyAttractionsRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+
+            android:adapter="@{adapter}"
+            android:orientation="vertical"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nearbyAttractionsTextView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

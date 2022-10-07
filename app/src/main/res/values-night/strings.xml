@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="search">Search</string>
+    <string name="cars">Cars</string>
+    <string name="taxi">Taxi</string>
+    <string name="deals">Deals</string>
+    <string name="country">Country</string>
+</resources>
