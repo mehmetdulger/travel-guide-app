@@ -36,7 +36,7 @@ class SearchFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        TravelGuideApi.retrofitService.getDataFromApi()
+        TravelGuideApi.retrofitService.getDataFromApi("topdestination")
             .enqueue(object : Callback<List<TravelGuideModel>> {
                 override fun onResponse(
                     call: Call<List<TravelGuideModel>>,
@@ -57,7 +57,9 @@ class SearchFragment : Fragment() {
                         val adapterNearbyAttraction =
                             NearbyAttractionAdapter(responseList) { item ->
                                 val action =
-                                    SearchFragmentDirections.actionNavigationSearchToDetailFragment()
+                                    SearchFragmentDirections.actionNavigationSearchToDetailFragment(
+
+                                    )
                                 findNavController().navigate(action)
                             }
                         val linearLayoutManager_Vertical = LinearLayoutManager(
@@ -66,11 +68,50 @@ class SearchFragment : Fragment() {
                             false
                         )
 
+
                         fragmentSearchBinding.apply {
                             topDestinationRecyclerView.layoutManager =
                                 linearLayoutManager_Horizontal
                             setVariable(BR.topDestinationAdapter, adapter)
 
+                            nearbyAttractionsRecyclerView.layoutManager =
+                                linearLayoutManager_Vertical
+                            setVariable(BR.nearbyAttractionAdapter, adapterNearbyAttraction)
+                        }
+                    }
+                }
+
+                override fun onFailure(call: Call<List<TravelGuideModel>>, t: Throwable) {
+                    Log.v("ERROR", t.message.toString())
+                }
+
+            })
+
+
+        TravelGuideApi.retrofitService.getDataFromApi("nearby")
+            .enqueue(object : Callback<List<TravelGuideModel>> {
+                override fun onResponse(
+                    call: Call<List<TravelGuideModel>>,
+                    response: Response<List<TravelGuideModel>>
+                ) {
+                    response.body()?.let { responseList ->
+
+                        val adapterNearbyAttraction =
+                            NearbyAttractionAdapter(responseList) { item ->
+                                val action =
+                                    SearchFragmentDirections.actionNavigationSearchToDetailFragment(
+
+                                    )
+                                findNavController().navigate(action)
+                            }
+                        val linearLayoutManager_Vertical = LinearLayoutManager(
+                            context,
+                            RecyclerView.VERTICAL,
+                            false
+                        )
+
+
+                        fragmentSearchBinding.apply {
                             nearbyAttractionsRecyclerView.layoutManager =
                                 linearLayoutManager_Vertical
                             setVariable(BR.nearbyAttractionAdapter, adapterNearbyAttraction)
