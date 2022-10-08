@@ -54,29 +54,12 @@ class SearchFragment : Fragment() {
                             RecyclerView.HORIZONTAL,
                             false
                         )
-                        val adapterNearbyAttraction =
-                            NearbyAttractionAdapter(responseList) { item ->
-                                val action =
-                                    SearchFragmentDirections.actionNavigationSearchToDetailFragment(
-
-                                    )
-                                findNavController().navigate(action)
-                            }
-                        val linearLayoutManager_Vertical = LinearLayoutManager(
-                            context,
-                            RecyclerView.VERTICAL,
-                            false
-                        )
-
 
                         fragmentSearchBinding.apply {
                             topDestinationRecyclerView.layoutManager =
                                 linearLayoutManager_Horizontal
                             setVariable(BR.topDestinationAdapter, adapter)
 
-                            nearbyAttractionsRecyclerView.layoutManager =
-                                linearLayoutManager_Vertical
-                            setVariable(BR.nearbyAttractionAdapter, adapterNearbyAttraction)
                         }
                     }
                 }

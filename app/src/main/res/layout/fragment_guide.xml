@@ -1,97 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.guide.TripFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="travelGuideModel"
+            type="com.mehmetdulger.travelguideapp.TravelGuideModel" />
 
-    <TextView
-        android:id="@+id/guideTextView"
-        style="@style/fragment_title_text_style"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="58dp"
-        android:text="Guide"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <variable
+            name="topPickArticlesAdapter"
+            type="com.mehmetdulger.travelguideapp.ui.guide.TopPickArticlerAdapter" />
 
-    <TextView
-        android:id="@+id/mightNeedTheseTextView"
-        style="@style/title_text_style"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:text="MIGHT NEED THESE"
-        app:layout_constraintStart_toStartOf="@+id/guideTextView"
-        app:layout_constraintTop_toBottomOf="@+id/guideTextView" />
+        <variable
+            name="mightNeedTheseAdapter"
+            type="com.mehmetdulger.travelguideapp.ui.guide.MightNeedTheseAdapter" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/mightNeedTheseRecyclerView"
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="125dp"
-        android:layout_marginTop="14dp"
-        app:layout_constraintTop_toBottomOf="@+id/mightNeedTheseTextView"
-        tools:layout_editor_absoluteX="1dp" />
+        android:layout_height="match_parent"
+        tools:context=".ui.guide.TripFragment">
 
-    <EditText
-        android:id="@+id/guideSearchBarEditText"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/search_bar_backgraund"
-        android:drawableEnd="@drawable/ic_red_search_icon"
-        android:hint="A country, a city, a place... or anything "
-        android:padding="10dp"
-        android:textColorHint="#52577A"
-        android:textFontWeight="400"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="@+id/guideTextView"
-        app:layout_constraintTop_toBottomOf="@+id/mightNeedTheseRecyclerView" />
 
-    <HorizontalScrollView
-        android:id="@+id/horizontalScrollView"
-        android:layout_width="match_parent"
-        android:layout_height="38dp"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintTop_toBottomOf="@+id/guideSearchBarEditText">
+        <TextView
+            android:id="@+id/guideTextView"
+            style="@style/fragment_title_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="58dp"
+            android:text="Guide"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.chip.ChipGroup
-            android:id="@+id/chipGroup"
+        <TextView
+            android:id="@+id/mightNeedTheseTextView"
+            style="@style/title_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text="MIGHT NEED THESE"
+            app:layout_constraintStart_toStartOf="@+id/guideTextView"
+            app:layout_constraintTop_toBottomOf="@+id/guideTextView" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/mightNeedTheseRecyclerView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="125dp"
+            android:layout_marginTop="14dp"
+            android:adapter="@{mightNeedTheseAdapter}"
+            app:layout_constraintTop_toBottomOf="@+id/mightNeedTheseTextView"
+            tools:layout_editor_absoluteX="1dp" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/chipsRecyclerView"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="horizontal" />
+        <EditText
+            android:id="@+id/guideSearchBarEditText"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/search_bar_backgraund"
+            android:drawableEnd="@drawable/ic_red_search_icon"
+            android:hint="A country, a city, a place... or anything "
+            android:padding="10dp"
+            android:textColorHint="#52577A"
+            android:textFontWeight="400"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/guideTextView"
+            app:layout_constraintTop_toBottomOf="@+id/mightNeedTheseRecyclerView" />
+
+        <HorizontalScrollView
+            android:id="@+id/horizontalScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@+id/guideSearchBarEditText">
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipGroup"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/chipsRecyclerView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal" />
 
 
-        </com.google.android.material.chip.ChipGroup>
-    </HorizontalScrollView>
+            </com.google.android.material.chip.ChipGroup>
+        </HorizontalScrollView>
 
-    <TextView
-        android:id="@+id/topPickArticlesTextView"
-        style="@style/title_text_style"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="Top-pick articles"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+        <TextView
+            android:id="@+id/topPickArticlesTextView"
+            style="@style/title_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Top-pick articles"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="272dp"
-        app:layout_constraintTop_toBottomOf="@id/topPickArticlesTextView"
-        android:layout_marginTop="12dp"
-        android:layout_marginStart="16dp"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/topPickArticlesRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="272dp"
+            android:adapter="@{topPickArticlesAdapter}"
+            android:orientation="horizontal"
+
+            app:layout_constraintTop_toBottomOf="@id/topPickArticlesTextView"
+            android:layout_marginTop="12dp" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

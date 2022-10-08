@@ -1,14 +1,12 @@
 package com.mehmetdulger.travelguideapp.ui.home
 
-import androidx.core.graphics.drawable.toDrawable
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import com.mehmetdulger.travelguideapp.*
-import com.mehmetdulger.travelguideapp.ui.Trip.Bookmark.BookmarkFragment
-import com.mehmetdulger.travelguideapp.ui.Trip.Trips.TripsFragment
-import kotlinx.coroutines.internal.artificialFrame
-import kotlin.time.toDuration
+import com.mehmetdulger.travelguideapp.ui.home.all.AllFragment
+import com.mehmetdulger.travelguideapp.ui.home.flights.FlightsFragment
+import com.mehmetdulger.travelguideapp.ui.home.hotels.HotelsFragment
+import com.mehmetdulger.travelguideapp.ui.home.transportations.TransportationsFragment
 
 
 class HomePageViewPager(fm: FragmentManager) : FragmentPagerAdapter(fm) {

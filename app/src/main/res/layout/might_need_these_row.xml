@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="travalGuideModel"
+            type="com.mehmetdulger.travelguideapp.TravelGuideModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="118dp"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/mightNeedTheseImageView"
+            android:layout_width="108dp"
+            android:layout_height="126dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearance="@style/mightNeedTheseImageView"
+            app:srcCompat="@drawable/ic_launcher_background" />
+
+        <TextView
+            android:id="@+id/mightNeedTheseTitleTextView"
+            style="capital_text_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginBottom="8dp"
+            android:text="@{travalGuideModel.title}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/mightNeedTheseImageView"
+            app:layout_constraintStart_toStartOf="@+id/mightNeedTheseImageView" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

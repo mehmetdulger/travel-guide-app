@@ -44,10 +44,10 @@ class HomeFragment : Fragment() {
         val viewPager = fragmentHomeBinding.homeViewPager
         viewPager.adapter = HomePageViewPager(fm = parentFragmentManager)
 
+
         tabLayout = fragmentHomeBinding.homePageTabLayout
         tabLayout.setupWithViewPager(viewPager)
         setupTabIcons()
-
 
     }
     private fun setupTabIcons() {

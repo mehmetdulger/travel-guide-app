@@ -83,6 +83,10 @@
         <item name="cornerSize"> 12dp</item>
     </style>
 
+    <style name="mightNeedTheseImageView">
+        <item name="cornerSize"> 6dp</item>
+    </style>
+
     <style name="bottomCropImageView">
         <item name="cornerSizeTopLeft">6dp</item>
         <item name="cornerSizeTopRight">6dp</item>
