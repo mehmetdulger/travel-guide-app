@@ -65,7 +65,7 @@ class SearchFragment : Fragment() {
     }
 
     private fun navigateDetail(travelGuideModel: TravelGuideModel){
-        val action = SearchFragmentDirections.actionNavigationSearchToDetailFragment()
+        val action = SearchFragmentDirections.actionNavigationSearchToDetailFragment(currentAllData = travelGuideModel)
         findNavController().navigate(action)
     }
 

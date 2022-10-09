@@ -52,6 +52,10 @@
         <action
             android:id="@+id/action_detailFragment_to_bookmarkFragment"
             app:destination="@id/bookmarkFragment" />
+        <argument
+            android:name="currentAllData"
+            app:argType="com.mehmetdulger.travelguideapp.TravelGuideModel" />
+
     </fragment>
     <fragment
         android:id="@+id/bookmarkFragment"
@@ -65,12 +69,6 @@
         <action
             android:id="@+id/action_allFragment_to_detailFragment"
             app:destination="@id/detailFragment" />
-        <argument
-            android:name="AllArg"
-            app:argType="string"
-            android:defaultValue="text" />
-
-
     </fragment>
     <fragment
         android:id="@+id/flightsFragment"

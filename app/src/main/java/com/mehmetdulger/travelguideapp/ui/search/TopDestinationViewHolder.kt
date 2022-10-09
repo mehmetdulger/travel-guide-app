@@ -18,7 +18,7 @@ class TopDestinationViewHolder(
         val binding = travelGuideBinding as TopDestinationRowBinding
         binding.root.setOnClickListener { onItemClickHandler(travelGuideModel) }
 
-        binding.topDestinationImageView.load(travelGuideModel.images[0].url)
+        binding.topDestinationImageView.load(travelGuideModel.images!![0].url!!)
 
         binding.topDestinationImageView.setOnClickListener {
             onItemClickHandler(travelGuideModel)

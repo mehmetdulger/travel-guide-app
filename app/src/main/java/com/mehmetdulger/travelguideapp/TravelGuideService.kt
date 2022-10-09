@@ -6,11 +6,8 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface TravelGuideService {
-    @GET ("AllTravelList")
-    fun getDataFromApiAll(): Call<List<TravelGuideModel>>
 
     @GET ("AllTravelList")
     fun getDataFromApi(@Query("category") category: String): Call<List<TravelGuideModel>>
-
 
 }

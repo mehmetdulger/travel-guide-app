@@ -20,7 +20,7 @@ class TopPickArticlesViewHolder(
         val binding = travelGuideBinding as TopPickArticlesRowBinding
         binding.root.setOnClickListener { onItemClickHandler(travelGuideModel) }
 
-        binding.topPickArticlesImageView.load(travelGuideModel.images[0].url)
+        binding.topPickArticlesImageView.load(travelGuideModel.images!![0].url!!)
 
         binding.topPickArticlesImageView.setOnClickListener {
             onItemClickHandler(travelGuideModel)

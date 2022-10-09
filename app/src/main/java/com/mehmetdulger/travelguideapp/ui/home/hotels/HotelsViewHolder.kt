@@ -18,7 +18,7 @@ class HotelsViewHolder(
         val binding = travelGuideBinding as HotelsRowBinding
         binding.root.setOnClickListener { onItemClickHandler(travelGuideModel) }
 
-        binding.hotelsDealImageView.load(travelGuideModel.images[0].url)
+        binding.hotelsDealImageView.load(travelGuideModel.images!![0].url!!)
 
         binding.hotelsDealImageView.setOnClickListener {
             onItemClickHandler(travelGuideModel)

@@ -20,7 +20,7 @@ class MightNeedTheseViewHolder(
         val binding = travelGuideBinding as MightNeedTheseRowBinding
         binding.root.setOnClickListener { onItemClickHandler(travelGuideModel) }
 
-        binding.mightNeedTheseImageView.load(travelGuideModel.images[0].url)
+        binding.mightNeedTheseImageView.load(travelGuideModel.images!![0].url!!)
 
         binding.mightNeedTheseImageView.setOnClickListener {
             onItemClickHandler(travelGuideModel)

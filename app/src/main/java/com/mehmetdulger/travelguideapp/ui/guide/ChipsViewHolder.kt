@@ -1,32 +1,28 @@
-package com.mehmetdulger.travelguideapp.ui.home.all
+package com.mehmetdulger.travelguideapp.ui.guide
 
 import android.widget.ImageView
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.mehmetdulger.travelguideapp.BR
+import com.mehmetdulger.travelguideapp.R
+import com.mehmetdulger.travelguideapp.TravelGuideCategoriesModel
 import com.mehmetdulger.travelguideapp.TravelGuideModel
-import com.mehmetdulger.travelguideapp.databinding.AllRowBinding
+import com.mehmetdulger.travelguideapp.databinding.ChipRowBinding
 import com.mehmetdulger.travelguideapp.databinding.TopDestinationRowBinding
 import com.mehmetdulger.travelguideapp.databinding.TopPickArticlesRowBinding
 
-class AllViewHolder(
+class ChipsViewHolder(
     private val travelGuideBinding: ViewDataBinding,
 ) : RecyclerView.ViewHolder(travelGuideBinding.root) {
     fun onBind(
-        travelGuideModel: TravelGuideModel,
-        onItemClickHandler: (travelGuideModel: TravelGuideModel) -> Unit
+        travelGuideCategoriesModel: TravelGuideCategoriesModel,
+        onItemClickHandler: (travelGuideModel: TravelGuideCategoriesModel) -> Unit
     ) {
-        val binding = travelGuideBinding as AllRowBinding
-        binding.root.setOnClickListener { onItemClickHandler(travelGuideModel) }
+        val binding = travelGuideBinding as ChipRowBinding
+        binding.root.setOnClickListener { onItemClickHandler(travelGuideCategoriesModel) }
 
-        binding.allDealImageView.load(travelGuideModel.images!![0].url!!)
-
-        binding.allDealImageView.setOnClickListener {
-            onItemClickHandler(travelGuideModel)
-        }
-
-        binding.setVariable(BR.travelGuideModel, travelGuideModel)
+        binding.setVariable(BR.travelGuideCategriesModel, travelGuideCategoriesModel)
     }
 
     private fun ImageView.load(url: String) {

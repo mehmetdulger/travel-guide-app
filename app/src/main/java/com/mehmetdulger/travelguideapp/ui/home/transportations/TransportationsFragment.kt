@@ -11,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import com.mehmetdulger.travelguideapp.BR
 import com.mehmetdulger.travelguideapp.TravelGuideModel
 import com.mehmetdulger.travelguideapp.databinding.FragmentTransportationsBinding
+import com.mehmetdulger.travelguideapp.ui.home.HomeFragmentDirections
 import com.mehmetdulger.travelguideapp.ui.search.TrasnportationsViewModel
 
 class TransportationsFragment : Fragment() {
@@ -54,7 +55,7 @@ class TransportationsFragment : Fragment() {
 
 
     private fun navigateDetail(travelGuideModel: TravelGuideModel){
-        val action = TransportationsFragmentDirections.actionTransportationsFragmentToDetailFragment()
+        val action = HomeFragmentDirections.actionNavigationHomeToDetailFragment(travelGuideModel)
         findNavController().navigate(action)
     }
 

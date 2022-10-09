@@ -18,7 +18,7 @@ class AllViewModel : ViewModel() {
     }
 
     private fun fetchAllTravelsGuide() {
-        TravelGuideApi.retrofitService.getDataFromApi("topdestination")
+        TravelGuideApi.retrofitService.getDataFromApi("flight|hotel|transportation")
             .enqueue(object : Callback<List<TravelGuideModel>> {
                 override fun onResponse(
                     call: Call<List<TravelGuideModel>>,

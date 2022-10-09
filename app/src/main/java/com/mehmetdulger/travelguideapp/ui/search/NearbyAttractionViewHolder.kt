@@ -18,7 +18,7 @@ class NearbyAttractionViewHolder(
         val binding = travelGuideBinding as NearbyAttractionsRowBinding
         binding.root.setOnClickListener { onItemClickHandler(travelGuideModel) }
 
-        binding.nearbyAttractionsImageView.load(travelGuideModel.images[1].url)
+        binding.nearbyAttractionsImageView.load(travelGuideModel.images!![1].url!!)
 
         binding.nearbyAttractionsImageView.setOnClickListener {
             onItemClickHandler(travelGuideModel)

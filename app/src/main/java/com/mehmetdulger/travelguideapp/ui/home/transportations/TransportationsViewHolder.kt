@@ -18,7 +18,7 @@ class TransportationsViewHolder(
         val binding = travelGuideBinding as TransportationsRowBinding
         binding.root.setOnClickListener { onItemClickHandler(travelGuideModel) }
 
-        binding.transportationsDealImageView.load(travelGuideModel.images[0].url)
+        binding.transportationsDealImageView.load(travelGuideModel.images!![0].url!!)
 
         binding.transportationsDealImageView.setOnClickListener {
             onItemClickHandler(travelGuideModel)

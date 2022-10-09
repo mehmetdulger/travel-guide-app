@@ -9,11 +9,11 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.mehmetdulger.travelguideapp.BR
+import com.mehmetdulger.travelguideapp.R
 import com.mehmetdulger.travelguideapp.TravelGuideModel
 import com.mehmetdulger.travelguideapp.databinding.FragmentAllBinding
-import com.mehmetdulger.travelguideapp.databinding.FragmentSearchBinding
+import com.mehmetdulger.travelguideapp.ui.home.HomeFragmentDirections
 import com.mehmetdulger.travelguideapp.ui.search.AllViewModel
-import com.mehmetdulger.travelguideapp.ui.search.SearchViewModel
 
 class AllFragment : Fragment() {
 
@@ -33,29 +33,28 @@ class AllFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         observeViewModel()
-
     }
 
-    private fun observeViewModel(){
+    private fun observeViewModel() {
         allViewModel.uiModelAll.observe(viewLifecycleOwner) {
             renderAllUi(it)
         }
-        allViewModel.error.observe(viewLifecycleOwner){
-            Toast.makeText(context,"Bir hata oluştu !",Toast.LENGTH_SHORT).show()
+        allViewModel.error.observe(viewLifecycleOwner) {
+            Toast.makeText(context, "Bir hata oluştu !", Toast.LENGTH_SHORT).show()
         }
     }
-    private fun renderAllUi(travelGuideModels: List<TravelGuideModel>){
-        val adapterAll = AllAdapter(travelGuideModels){ travelGuideModel ->
+
+    private fun renderAllUi(travelGuideModels: List<TravelGuideModel>) {
+        val adapterAll = AllAdapter(travelGuideModels) { travelGuideModel ->
             navigateDetail(travelGuideModel)
         }
         fragmentAllBinding.apply {
-            setVariable(BR.allAdapter,adapterAll)
+            setVariable(BR.allAdapter, adapterAll)
         }
     }
 
-
-    private fun navigateDetail(travelGuideModel: TravelGuideModel){
-        val action = AllFragmentDirections.actionAllFragmentToDetailFragment()
+    private fun navigateDetail(travelGuideModel: TravelGuideModel) {
+        val action = HomeFragmentDirections.actionNavigationHomeToDetailFragment(travelGuideModel)
         findNavController().navigate(action)
     }
 

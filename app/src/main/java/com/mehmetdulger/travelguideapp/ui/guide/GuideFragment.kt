@@ -74,7 +74,7 @@ class GuideFragment : Fragment() {
         }
     }
     private fun navgateDetail(travelGuideModel: TravelGuideModel){
-        val action = GuideFragmentDirections.actionNavigationGuideToDetailFragment()
+        val action = GuideFragmentDirections.actionNavigationGuideToDetailFragment(travelGuideModel)
         findNavController().navigate(action)
     }
 
