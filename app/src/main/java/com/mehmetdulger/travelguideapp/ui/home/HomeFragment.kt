@@ -26,20 +26,8 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        fragmentHomeBinding.apply {
-            flightsImageView.setOnClickListener {
-                onClick(it)
-            }
-            hotelsImageView.setOnClickListener{
-                onClick(it)
-            }
-            carsImageView.setOnClickListener{
-                onClick(it)
-            }
-            taxiImageView.setOnClickListener{
-                onClick(it)
-            }
-        }
+
+        clickEfect()
 
         val viewPager = fragmentHomeBinding.homeViewPager
         viewPager.adapter = HomePageViewPager(fm = parentFragmentManager)
@@ -55,6 +43,23 @@ class HomeFragment : Fragment() {
         tabLayout.getTabAt(1)
         tabLayout.getTabAt(2)
         tabLayout.getTabAt(3)
+    }
+    private fun clickEfect(){
+        fragmentHomeBinding.apply {
+            flightsImageView.setOnClickListener {
+                onClick(it)
+            }
+            hotelsImageView.setOnClickListener{
+                onClick(it)
+            }
+            carsImageView.setOnClickListener{
+                onClick(it)
+            }
+            taxiImageView.setOnClickListener{
+                onClick(it)
+            }
+        }
+
     }
     fun onClick(v: View) {
         val buttonClick = AlphaAnimation(1f, 0.5f)

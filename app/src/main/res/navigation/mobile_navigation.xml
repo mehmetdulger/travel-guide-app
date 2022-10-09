@@ -58,4 +58,42 @@
         android:name="com.mehmetdulger.travelguideapp.ui.Trip.Bookmark.BookmarkFragment"
         android:label="fragment_bookmark"
         tools:layout="@layout/fragment_bookmark" />
+    <fragment
+        android:id="@+id/allFragment"
+        android:name="com.mehmetdulger.travelguideapp.ui.home.all.AllFragment"
+        android:label="AllFragment" >
+        <action
+            android:id="@+id/action_allFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+        <argument
+            android:name="AllArg"
+            app:argType="string"
+            android:defaultValue="text" />
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/flightsFragment"
+        android:name="com.mehmetdulger.travelguideapp.ui.home.flights.FlightsFragment"
+        android:label="FlightsFragment" >
+        <action
+            android:id="@+id/action_flightsFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/hotelsFragment"
+        android:name="com.mehmetdulger.travelguideapp.ui.home.hotels.HotelsFragment"
+        android:label="HotelsFragment" >
+        <action
+            android:id="@+id/action_hotelsFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/transportationsFragment"
+        android:name="com.mehmetdulger.travelguideapp.ui.home.transportations.TransportationsFragment"
+        android:label="TransportationsFragment" >
+        <action
+            android:id="@+id/action_transportationsFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
 </navigation>

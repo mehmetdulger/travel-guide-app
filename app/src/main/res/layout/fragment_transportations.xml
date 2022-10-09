@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="travelGuideModel"
             type="com.mehmetdulger.travelguideapp.TravelGuideModel" />
@@ -16,15 +17,15 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.home.hotels.HotelsFragment">
+        tools:context=".ui.home.transportations.TransportationsFragment">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/transportationsRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="140dp"
-
             android:adapter="@{transportationsAdapter}"
             android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

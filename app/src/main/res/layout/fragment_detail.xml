@@ -5,7 +5,17 @@
 
     <data>
 
+        <variable
+            name="travelGuideModel"
+            type="com.mehmetdulger.travelguideapp.TravelGuideModel" />
+
+        <variable
+            name="detailAdapter"
+            type="com.mehmetdulger.travelguideapp.ui.detail.DetailAdapter" />
     </data>
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -32,6 +42,8 @@
             android:background="@drawable/detail_images_bar_backgraound"
             android:elevation="50dp"
             android:orientation="horizontal"
+
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="@+id/imageView" />
 
         <TextView
@@ -41,7 +53,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="24dp"
             android:fontFamily="@font/source_sans_pro"
-            android:text="Detail Title"
+            android:text="@{travelGuideModel.title}"
             android:textColor="#0A2753"
             android:textFontWeight="400"
             android:textSize="28sp"
@@ -89,17 +101,17 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est vel odio elementum 
             android:layout_marginHorizontal="32dp"
             android:layout_marginTop="3dp"
             android:background="@drawable/bookmark_button_background"
-            android:text="Add Bookmark"
-            android:textColor="@color/white"
-            android:textSize="16sp"
             android:fontFamily="@font/source_sans_pro"
-            android:textFontWeight="600"
+            android:text="Add Bookmark"
             android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textFontWeight="600"
+            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="@+id/detailScrollView"
             app:layout_constraintStart_toStartOf="@+id/detailScrollView"
             app:layout_constraintTop_toBottomOf="@+id/detailScrollView"
             app:shapeAppearance="@color/white" />
 
-
     </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
 </layout>

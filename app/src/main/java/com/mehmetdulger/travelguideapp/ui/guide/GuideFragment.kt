@@ -5,7 +5,9 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -13,6 +15,8 @@ import com.mehmetdulger.travelguideapp.BR
 import com.mehmetdulger.travelguideapp.TravelGuideApi
 import com.mehmetdulger.travelguideapp.TravelGuideModel
 import com.mehmetdulger.travelguideapp.databinding.FragmentGuideBinding
+import com.mehmetdulger.travelguideapp.databinding.FragmentSearchBinding
+import com.mehmetdulger.travelguideapp.ui.search.SearchViewModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -20,88 +24,82 @@ import retrofit2.Response
 class GuideFragment : Fragment() {
 
     private lateinit var fragmentGuideBinding: FragmentGuideBinding
+    private lateinit var guideViewModel: GuideViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        guideViewModel = ViewModelProvider(this)[GuideViewModel::class.java]
         fragmentGuideBinding = FragmentGuideBinding.inflate(inflater, container, false)
         return fragmentGuideBinding.root
     }
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        TravelGuideApi.retrofitService.getDataFromApi("toppick")
-            .enqueue(object : Callback<List<TravelGuideModel>> {
-                override fun onResponse(
-                    call: Call<List<TravelGuideModel>>,
-                    response: Response<List<TravelGuideModel>>
-                ) {
-                    response.body()?.let { responseList ->
-
-                        val adapterTopPickArticles =
-                            TopPickArticlerAdapter(responseList) { item ->
-                                val action =
-                                    GuideFragmentDirections.actionNavigationGuideToDetailFragment()
-                                findNavController().navigate(action)
-                            }
-                        val linearLayoutManager_horizontal = LinearLayoutManager(
-                            context,
-                            RecyclerView.HORIZONTAL,
-                            false
-                        )
-
-                        fragmentGuideBinding.apply {
-                            topPickArticlesRecyclerView.layoutManager =
-                                linearLayoutManager_horizontal
-                            setVariable(BR.topPickArticlesAdapter, adapterTopPickArticles)
-                        }
-                    }
-                }
-
-                override fun onFailure(call: Call<List<TravelGuideModel>>, t: Throwable) {
-                    Log.v("ERROR", t.message.toString())
-                }
-
-            })
-
-
-        TravelGuideApi.retrofitService.getDataFromApi("mightneed")
-            .enqueue(object : Callback<List<TravelGuideModel>> {
-                override fun onResponse(
-                    call: Call<List<TravelGuideModel>>,
-                    response: Response<List<TravelGuideModel>>
-                ) {
-                    response.body()?.let { responseList ->
-
-                        val adapterMightNeedThese =
-                            MightNeedTheseAdapter(responseList) { item ->
-                                val action =
-                                    GuideFragmentDirections.actionNavigationGuideToDetailFragment()
-                                findNavController().navigate(action)
-                            }
-                        val linearLayoutManager_horizontal = LinearLayoutManager(
-                            context,
-                            RecyclerView.HORIZONTAL,
-                            false
-                        )
-
-                        fragmentGuideBinding.apply {
-                            mightNeedTheseRecyclerView.layoutManager =
-                                linearLayoutManager_horizontal
-                            setVariable(BR.mightNeedTheseAdapter, adapterMightNeedThese)
-                        }
-                    }
-                }
-
-                override fun onFailure(call: Call<List<TravelGuideModel>>, t: Throwable) {
-                    Log.v("ERROR", t.message.toString())
-                }
-
-            })
-
-
+        observeViewModel()
     }
+
+
+    private fun observeViewModel() {
+        guideViewModel.uiModelMightNeedThese.observe(viewLifecycleOwner) {
+            renderMightNeedTheseUi(it)
+        }
+        guideViewModel.uiModelTopPickArticles.observe(viewLifecycleOwner) {
+            renderTopPickArticlesUi(it)
+        }
+        guideViewModel.error.observe(viewLifecycleOwner) {
+            Toast.makeText(context, "Bir hata oluştu !", Toast.LENGTH_SHORT).show()
+        }
+    }
+    private fun renderMightNeedTheseUi(travelGuideModels: List<TravelGuideModel>){
+        val adapterMightNeedThese = MightNeedTheseAdapter(travelGuideModels){travelGuideModel ->
+            navgateDetail(travelGuideModel)
+        }
+        fragmentGuideBinding.apply {
+            setVariable(BR.mightNeedTheseAdapter,adapterMightNeedThese)
+        }
+    }
+
+    private fun renderTopPickArticlesUi(travelGuideModels: List<TravelGuideModel>){
+        val adapterTopPickArticles = TopPickArticlerAdapter(travelGuideModels){travelGuideModel ->
+            navgateDetail(travelGuideModel)
+        }
+
+        fragmentGuideBinding.apply {
+            setVariable(BR.topPickArticlesAdapter,adapterTopPickArticles)
+        }
+    }
+    private fun navgateDetail(travelGuideModel: TravelGuideModel){
+        val action = GuideFragmentDirections.actionNavigationGuideToDetailFragment()
+        findNavController().navigate(action)
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

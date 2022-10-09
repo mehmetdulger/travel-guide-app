@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="travelGuideModel"
             type="com.mehmetdulger.travelguideapp.TravelGuideModel" />
@@ -22,9 +23,9 @@
             android:id="@+id/flightsRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="140dp"
-
             android:adapter="@{flightsAdapter}"
             android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
