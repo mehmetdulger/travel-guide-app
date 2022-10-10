@@ -8,6 +8,9 @@
         <variable
             name="travelGuideModel"
             type="com.mehmetdulger.travelguideapp.TravelGuideModel" />
+        <variable
+            name="travelGuideCategoriesModel"
+            type="com.mehmetdulger.travelguideapp.TravelGuideCategoriesModel" />
 
         <variable
             name="topPickArticlesAdapter"
@@ -82,81 +85,18 @@
                 app:layout_constraintStart_toStartOf="@+id/guideTextView"
                 app:layout_constraintTop_toBottomOf="@+id/mightNeedTheseRecyclerView" />
 
-            <HorizontalScrollView
-                android:id="@+id/horizontalScrollView"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/chipRecyclerView"
                 android:layout_width="match_parent"
-                android:layout_height="38dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="6dp"
                 android:layout_marginTop="24dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:adapter="@{chipAdapter}"
                 app:layout_constraintTop_toBottomOf="@+id/guideSearchBarEditText">
 
-                <com.google.android.material.chip.ChipGroup
-                    android:id="@+id/chipGroup"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <com.google.android.material.chip.Chip
-                        android:id="@+id/chipss"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:backgroundTint="#FCFCFD"
-                        android:elevation="3dp"
-                        android:fontFamily="@font/source_sans_pro"
-                        android:text="deneme"
-                        android:textColor="#0048F0"
-                        android:textFontWeight="600"
-                        android:textSize="16sp"
-                        app:chipIcon="@drawable/ic_launcher_background"/>
-                    <com.google.android.material.chip.Chip
-                        android:id="@+id/chipsss"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:backgroundTint="#FCFCFD"
-                        android:elevation="3dp"
-                        android:fontFamily="@font/source_sans_pro"
-                        android:text="deneme"
-                        android:textColor="#0048F0"
-                        android:textFontWeight="600"
-                        android:textSize="16sp"
-                        app:chipIcon="@drawable/ic_launcher_background"/>
-                    <com.google.android.material.chip.Chip
-                        android:id="@+id/chipssssssssss"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:backgroundTint="#FCFCFD"
-                        android:elevation="3dp"
-                        android:fontFamily="@font/source_sans_pro"
-                        android:text="deneme"
-                        android:textColor="#0048F0"
-                        android:textFontWeight="600"
-                        android:textSize="16sp"
-                        app:chipIcon="@drawable/ic_launcher_background"/>
-                    <com.google.android.material.chip.Chip
-                        android:id="@+id/chipsssss"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:backgroundTint="#FCFCFD"
-                        android:elevation="3dp"
-                        android:fontFamily="@font/source_sans_pro"
-                        android:text="deneme"
-                        android:textColor="#0048F0"
-                        android:textFontWeight="600"
-                        android:textSize="16sp"
-                        app:chipIcon="@drawable/ic_launcher_background"/>
-                    <com.google.android.material.chip.Chip
-                        android:id="@+id/chipssssssss"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:backgroundTint="#FCFCFD"
-                        android:elevation="3dp"
-                        android:fontFamily="@font/source_sans_pro"
-                        android:text="deneme"
-                        android:textColor="#0048F0"
-                        android:textFontWeight="600"
-                        android:textSize="16sp"
-                        app:chipIcon="@drawable/ic_launcher_background"/>
-                </com.google.android.material.chip.ChipGroup>
-            </HorizontalScrollView>
+            </androidx.recyclerview.widget.RecyclerView>
 
             <TextView
                 android:id="@+id/topPickArticlesTextView"
@@ -167,7 +107,7 @@
                 android:layout_marginTop="16dp"
                 android:text="Top-pick articles"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+                app:layout_constraintTop_toBottomOf="@+id/chipRecyclerView" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/topPickArticlesRecyclerView"

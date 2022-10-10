@@ -1,16 +1,14 @@
 package com.mehmetdulger.travelguideapp.ui.guide
 
-import android.widget.ImageView
+import android.widget.ArrayAdapter.createFromResource
+import androidx.core.graphics.drawable.toDrawable
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.mehmetdulger.travelguideapp.BR
 import com.mehmetdulger.travelguideapp.R
 import com.mehmetdulger.travelguideapp.TravelGuideCategoriesModel
-import com.mehmetdulger.travelguideapp.TravelGuideModel
 import com.mehmetdulger.travelguideapp.databinding.ChipRowBinding
-import com.mehmetdulger.travelguideapp.databinding.TopDestinationRowBinding
-import com.mehmetdulger.travelguideapp.databinding.TopPickArticlesRowBinding
+
 
 class ChipsViewHolder(
     private val travelGuideBinding: ViewDataBinding,
@@ -22,12 +20,20 @@ class ChipsViewHolder(
         val binding = travelGuideBinding as ChipRowBinding
         binding.root.setOnClickListener { onItemClickHandler(travelGuideCategoriesModel) }
 
+        val chipsIconResource = when (travelGuideCategoriesModel.icon) {
+            "taxi" -> R.drawable.ic_taxi_icon_chip
+            "restaurant" -> R.drawable.ic_restaurant_icon_chip
+            "rentcar" -> R.drawable.ic_rentcar_icon_chip
+            "museum" -> R.drawable.ic_museum_icon_chip
+            "resort" -> R.drawable.ic_resort_icon_chip
+            "sightseeing" -> R.drawable.ic_sightseeing_icon_chip
+            "mall"->R.drawable.ic_mall_icon_chip
+            else -> R.drawable.ic_launcher_background
+        }
+        binding.chipRow.setChipIconResource(chipsIconResource)
+        binding.chipRow.chipBackgroundColor
+
         binding.setVariable(BR.travelGuideCategriesModel, travelGuideCategoriesModel)
     }
 
-    private fun ImageView.load(url: String) {
-        Glide.with(context)
-            .load(url)
-            .into(this)
-    }
 }

@@ -28,15 +28,15 @@
 
         <TextView
             android:id="@+id/mightNeedTheseTitleTextView"
-            style="capital_text_style"
+            style="@style/capital_text_style"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
             android:layout_marginBottom="8dp"
-            android:elevation="6dp"
-            android:text="@{travalGuideModel.title}"
+            android:text="text"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/mightNeedTheseImageView"
             app:layout_constraintStart_toStartOf="@+id/mightNeedTheseImageView" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

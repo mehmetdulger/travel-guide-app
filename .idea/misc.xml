@@ -14,6 +14,13 @@
         <entry key="app/src/main/res/drawable/ic_bookmark_icon.xml" value="0.1235" />
         <entry key="app/src/main/res/drawable/ic_cars_icon.xml" value="0.163" />
         <entry key="app/src/main/res/drawable/ic_home_icon.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_mall_icon_chip.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_museum_icon_chip.xml" value="0.1545" />
+        <entry key="app/src/main/res/drawable/ic_rentcar_icon_chip.xml" value="0.1545" />
+        <entry key="app/src/main/res/drawable/ic_resort_icon_chip.xml" value="0.1545" />
+        <entry key="app/src/main/res/drawable/ic_restaurant_icon_chip.xml" value="0.1545" />
+        <entry key="app/src/main/res/drawable/ic_sightseeing_icon_chip.xml" value="0.135" />
+        <entry key="app/src/main/res/drawable/ic_taxi_icon_chip.xml" value="0.135" />
         <entry key="app/src/main/res/drawable/image_radius_crop.xml" value="0.2165" />
         <entry key="app/src/main/res/drawable/item_background.xml" value="0.2435" />
         <entry key="app/src/main/res/drawable/item_shape.xml" value="0.1" />

@@ -9,26 +9,34 @@
             name="travelGuideCategriesModel"
             type="com.mehmetdulger.travelguideapp.TravelGuideCategoriesModel" />
 
+        <variable
+            name="guideFragmentData"
+            type="com.mehmetdulger.travelguideapp.ui.guide.GuideFragment" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
-        android:layout_height="38dp">
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp">
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chip_row"
             android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:backgroundTint="#FCFCFD"
+            android:layout_height="55dp"
             android:elevation="3dp"
             android:fontFamily="@font/source_sans_pro"
+            android:hint="text"
             android:text="@{travelGuideCategriesModel.title}"
             android:textColor="#0048F0"
             android:textFontWeight="600"
             android:textSize="16sp"
-            app:chipIcon="@drawable/ic_launcher_background"
+            app:chipBackgroundColor="#FCFCFD"
+            app:chipIconSize="22dp"
+            app:iconStartPadding="12dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:textEndPadding="12dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

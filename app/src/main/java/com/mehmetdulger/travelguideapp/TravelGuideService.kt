@@ -10,4 +10,7 @@ interface TravelGuideService {
     @GET ("AllTravelList")
     fun getDataFromApi(@Query("category") category: String): Call<List<TravelGuideModel>>
 
+    @GET ("GuideCategories")
+    fun getDataFromApiCategories(): Call<List<TravelGuideCategoriesModel>>
+
 }

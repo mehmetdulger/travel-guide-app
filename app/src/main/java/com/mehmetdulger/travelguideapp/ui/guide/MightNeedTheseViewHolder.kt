@@ -21,6 +21,7 @@ class MightNeedTheseViewHolder(
         binding.root.setOnClickListener { onItemClickHandler(travelGuideModel) }
 
         binding.mightNeedTheseImageView.load(travelGuideModel.images!![0].url!!)
+        binding.mightNeedTheseTitleTextView.text = travelGuideModel.title
 
         binding.mightNeedTheseImageView.setOnClickListener {
             onItemClickHandler(travelGuideModel)
