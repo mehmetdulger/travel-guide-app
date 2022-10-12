@@ -27,9 +27,12 @@ class NearbyAttractionViewHolder(
         binding.setVariable(BR.travelGuideModel, travelGuideModel)
     }
 
-    private fun ImageView.load(url: String) {
-        Glide.with(context)
-            .load(url)
-            .into(this)
-    }
 }
+
+private fun ImageView.load(url: String) {
+    Glide.with(context)
+        .load(url)
+        .into(this)
+}
+
+

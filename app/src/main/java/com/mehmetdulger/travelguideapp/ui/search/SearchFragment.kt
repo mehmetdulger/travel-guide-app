@@ -11,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import com.mehmetdulger.travelguideapp.BR
 import com.mehmetdulger.travelguideapp.TravelGuideModel
 import com.mehmetdulger.travelguideapp.databinding.FragmentSearchBinding
+import com.mehmetdulger.travelguideapp.databinding.NearbyAttractionsRowBinding
 
 class SearchFragment : Fragment() {
 
@@ -41,6 +42,9 @@ class SearchFragment : Fragment() {
         searchViewModel.uiModelNearbyAttraction.observe(viewLifecycleOwner) {
             renderNearbyAttractionUi(it)
         }
+        searchViewModel.uiModelNearbyAttraction.observe(viewLifecycleOwner) {
+            renderaddBookmarkUi(it)
+        }
         searchViewModel.error.observe(viewLifecycleOwner){
             Toast.makeText(context,"Bir hata oluştu !",Toast.LENGTH_SHORT).show()
         }
@@ -63,8 +67,22 @@ class SearchFragment : Fragment() {
             setVariable(BR.nearbyAttractionAdapter,adapterNearbyAttraction)
         }
     }
+    private fun renderaddBookmarkUi(travelGuideModels: List<TravelGuideModel>){
+        val adapterNearbyAttraction = NearbyAttractionAdapter(travelGuideModels) { travelGuideModel ->
+            navigateBookmark(travelGuideModel)
+        }
+
+        fragmentSearchBinding.apply {
+            setVariable(BR.nearbyAttractionAdapter,adapterNearbyAttraction)
+        }
+    }
 
     private fun navigateDetail(travelGuideModel: TravelGuideModel){
+        val action = SearchFragmentDirections.actionNavigationSearchToDetailFragment(currentAllData = travelGuideModel)
+        findNavController().navigate(action)
+    }
+
+    private fun navigateBookmark(travelGuideModel: TravelGuideModel){
         val action = SearchFragmentDirections.actionNavigationSearchToDetailFragment(currentAllData = travelGuideModel)
         findNavController().navigate(action)
     }
