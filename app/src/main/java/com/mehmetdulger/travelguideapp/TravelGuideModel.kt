@@ -1,10 +1,10 @@
+
 package com.mehmetdulger.travelguideapp
 
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
-import org.jetbrains.annotations.Nullable
 
 @Parcelize
 data class TravelGuideModel(
@@ -19,7 +19,7 @@ data class TravelGuideModel(
     @SerializedName("id")
         val id: String,
     @SerializedName("images")
-        val images: List<Image>? ,
+        val images: List<Image>?,
     @SerializedName("isBookmark")
         val isBookmark: Boolean,
     @SerializedName("title")

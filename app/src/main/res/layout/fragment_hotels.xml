@@ -11,7 +11,7 @@
 
         <variable
             name="hotelsAdapter"
-            type="com.mehmetdulger.travelguideapp.ui.home.hotels.HotelsAdapter" />
+            type="com.mehmetdulger.travelguideapp.adapters.home.hotels.HotelsAdapter" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

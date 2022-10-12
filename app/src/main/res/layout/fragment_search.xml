@@ -11,11 +11,11 @@
 
         <variable
             name="topDestinationAdapter"
-            type="com.mehmetdulger.travelguideapp.ui.search.TopDestinationAdapter" />
+            type="com.mehmetdulger.travelguideapp.adapters.search.TopDestinationAdapter" />
 
         <variable
             name="nearbyAttractionAdapter"
-            type="com.mehmetdulger.travelguideapp.ui.search.NearbyAttractionAdapter" />
+            type="com.mehmetdulger.travelguideapp.adapters.search.NearbyAttractionAdapter" />
 
     </data>
 

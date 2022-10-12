@@ -9,11 +9,11 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.mehmetdulger.travelguideapp.BR
+import com.mehmetdulger.travelguideapp.adapters.home.hotels.HotelsAdapter
 import com.mehmetdulger.travelguideapp.TravelGuideModel
-import com.mehmetdulger.travelguideapp.databinding.FragmentFlightsBinding
 import com.mehmetdulger.travelguideapp.databinding.FragmentHotelsBinding
 import com.mehmetdulger.travelguideapp.ui.home.HomeFragmentDirections
-import com.mehmetdulger.travelguideapp.ui.home.hotels.HotelsViewModel
+import com.mehmetdulger.travelguideapp.presentation.home.hotels.HotelsViewModel
 
 class HotelsFragment : Fragment() {
 

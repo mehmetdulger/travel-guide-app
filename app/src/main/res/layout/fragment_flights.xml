@@ -11,7 +11,7 @@
 
         <variable
             name="flightsAdapter"
-            type="com.mehmetdulger.travelguideapp.ui.home.flights.FlightsAdapter" />
+            type="com.mehmetdulger.travelguideapp.adapters.home.flights.FlightsAdapter" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

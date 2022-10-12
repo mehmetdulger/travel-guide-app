@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="travelGuideModel"
+            type="com.mehmetdulger.travelguideapp.TravelGuideModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="358dp"
+        android:layout_height="wrap_content"
+        android:paddingTop="12dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/addBookmarkImageView"
+            android:layout_width="358dp"
+            android:layout_height="154dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearance="@style/circleImageView"
+            app:srcCompat="@drawable/ic_launcher_background" />
+
+        <TextView
+            android:id="@+id/addBookmarkTypeTextView"
+            style="@style/type_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/type_backround"
+            android:hint="TYPE"
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="2dp"
+            android:text="@{travelGuideModel.category}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/addBookmarkAtractionTextView"
+            style="@style/capital_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="46dp"
+            android:text="@{travelGuideModel.title}"
+            android:hint="text"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/addBookmarkAityTextName"
+            style="@style/country_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@{travelGuideModel.city}"
+            android:textSize="18sp"
+            android:hint="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/addBookmarkAtractionTextView" />
+
+        <ImageView
+            android:id="@+id/addBokmarkPinkImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/addBookmarkBackground"
+            app:layout_constraintEnd_toEndOf="@+id/addBookmarkBackground"
+            app:layout_constraintStart_toStartOf="@+id/addBookmarkBackground"
+            app:layout_constraintTop_toTopOf="@+id/addBookmarkBackground"
+            app:srcCompat="@drawable/ic_add_bookmark_full" />
+
+        <TextView
+            android:id="@+id/addBookmarkBackground"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/circle_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

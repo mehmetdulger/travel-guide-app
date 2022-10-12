@@ -1,5 +1,6 @@
 package com.mehmetdulger.travelguideapp
 
+import com.mehmetdulger.travelguideapp.data.remote.TravelGuideService
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

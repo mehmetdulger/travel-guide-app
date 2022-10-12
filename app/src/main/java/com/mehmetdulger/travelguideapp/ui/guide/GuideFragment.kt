@@ -9,9 +9,13 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.mehmetdulger.travelguideapp.BR
+import com.mehmetdulger.travelguideapp.adapters.guide.ChipAdapter
+import com.mehmetdulger.travelguideapp.adapters.guide.MightNeedTheseAdapter
+import com.mehmetdulger.travelguideapp.adapters.guide.TopPickArticlerAdapter
 import com.mehmetdulger.travelguideapp.TravelGuideCategoriesModel
 import com.mehmetdulger.travelguideapp.TravelGuideModel
 import com.mehmetdulger.travelguideapp.databinding.FragmentGuideBinding
+import com.mehmetdulger.travelguideapp.presentation.guide.GuideViewModel
 
 
 open class GuideFragment : Fragment() {

@@ -11,7 +11,7 @@
 
         <variable
             name="detailAdapter"
-            type="com.mehmetdulger.travelguideapp.ui.detail.DetailAdapter" />
+            type="com.mehmetdulger.travelguideapp.adapters.detail.DetailAdapter" />
     </data>
 
     <androidx.core.widget.NestedScrollView
