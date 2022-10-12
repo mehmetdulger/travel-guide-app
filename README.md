@@ -7,7 +7,7 @@
 - [x] Recyclerview
 - [x] Navigation
 - [x] DataBinding 
-- [x] [ViewModel
+- [x] ViewModel
 - [x] LiveData 
 - [x] Chips
 
